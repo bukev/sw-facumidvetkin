@@ -6,7 +6,7 @@ import type {
   Movie,
   Planet,
   Starship
-} from '@types';
+} from '@bukev/types';
 
 @Injectable()
 export class AppService {
