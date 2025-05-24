@@ -1,0 +1,14 @@
+'use client'
+import Section from '../../components/Section';
+import MovieListItem from './MovieListItem';
+
+export default function CharactersPage() {
+  return (
+    <main>
+      <Section
+        entity='movies'
+        ListItemComponent={MovieListItem}
+      />
+    </main>
+  );
+}

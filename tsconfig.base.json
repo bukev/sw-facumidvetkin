@@ -1,8 +1,8 @@
 {
   "compilerOptions": {
-    "baseUrl": ".",
+    "baseUrl": "./",
     "paths": {
-      "@shared/*": ["libs/*"]
+      "@types": ["../../libs/types"]
     },
     "experimentalDecorators": true,
     "emitDecoratorMetadata": true,
