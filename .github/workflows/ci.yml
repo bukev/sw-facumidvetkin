@@ -31,15 +31,15 @@ jobs:
           cache: 'npm'
 
       - name: Install frontend dependencies
-        run: npm ci
+        run: npm install
         working-directory: apps/frontend
 
       - name: Install backend dependencies
-        run: npm ci
+        run: npm install
         working-directory: apps/backend
 
       - name: Run Prettier check
-        run: npx prettier . --check
+        run: npx prettier --check .
 
       - name: Run frontend tests
         run: npm run test
