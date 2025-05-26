@@ -48,12 +48,11 @@ const MovieDetailPage: React.FC = () => {
                 <Text
                     style={{
                         margin: '24px 0 32px',
-                        // textIndent: '36px',
                         textAlign: 'center',
                         lineHeight: '18px'
                     }}
                     manager="decipher"
-                    fixed
+                    fixed={true}
                 >
                     {opening_crawl}
                 </Text>

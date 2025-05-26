@@ -9,7 +9,7 @@ package-lock.json
 # Build Output
 # -------------------
 dist/
-**/dist/
+**/dist
 .next/
 out/               # Next.js static export
 .next/cache/       # Next.js cache
@@ -26,8 +26,8 @@ pnpm-debug.log*
 # Environment Files
 # -------------------
 .env
-.env.*             # .env.local, .env.production, etc.
-*.local            # .env.local
+.env.*
+*.local
 
 # -------------------
 # Editor/IDE Files
@@ -48,7 +48,7 @@ Thumbs.db
 # Optional: test coverage
 # -------------------
 coverage/
-**/coverage/
+**/coverage
 
 # -------------------
 # Optional: eslint cache

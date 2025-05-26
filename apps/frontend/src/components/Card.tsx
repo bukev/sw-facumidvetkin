@@ -57,7 +57,7 @@ const Card: React.FC<Props> = ({ id, title, subtitle, type, overrideNavigation }
                     <Text
                         style={{fontWeight: 800}}
                         manager="decipher"
-                        fixed
+                        fixed={true}
                     >
                         {title}
                     </Text>
@@ -65,7 +65,7 @@ const Card: React.FC<Props> = ({ id, title, subtitle, type, overrideNavigation }
                     {subtitle &&
                         <Text
                             manager="decipher"
-                            fixed                            
+                            fixed={true}                  
                         >
                             {subtitle}
                         </Text>

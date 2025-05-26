@@ -24,8 +24,8 @@ const useFetchDetail = <T>(): useFetchDetailResult<T> => {
             try {
                 const res = await fetch(url);
                 if (!res.ok) throw new Error('Failed to fetch characters');
+
                 const data = await res.json();
-                console.log(data)
                 setData(data);
             } catch (err) {
                 if (err instanceof Error) {

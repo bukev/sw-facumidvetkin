@@ -13,15 +13,11 @@ const Info: React.FC<Props> = ({ data }) => {
 
     return (
         <div className="detail-section">
-            {/* <Text as="h2">
-                Details
-            </Text> */}
-
             <div className="details-list-grid">
                 {Object.keys(data).map((key) => (
                     <Text
                         manager='decipher'
-                        fixed
+                        fixed={true}
                         style={{ textTransform: 'capitalize' }}
                         key={key}
                     >

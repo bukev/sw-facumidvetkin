@@ -124,13 +124,15 @@ export class AppService {
 
   async getCharacterById(id: string): Promise<Character> {
     const character = await this.fetchFromSwapiById('people', id);
-    delete character.url
-    delete character.species
-    delete character.vehicles
-
+    
     const homeworld = await this.extractIdAndNameFromUrlList([character.homeworld])
     const movies = await this.extractIdAndNameFromUrlList(character.films)
     const starships = await this.extractIdAndNameFromUrlList(character.starships)
+    
+    delete character.url
+    delete character.species
+    delete character.vehicles
+    delete character.films
 
     return {
       ...character,

@@ -1,4 +1,4 @@
-import useFetchList from "src/hooks/useFetchList";
+import useFetchList from "../hooks/useFetchList";
 import { ListResponse } from "@bukev/types";
 import { Animator, Text } from "@arwes/react";
 import Loading from "./Loading";
@@ -25,7 +25,7 @@ const Section: React.FC<Props> = ({ entity, ListItemComponent }) => {
                 <Text
                     as="h1"
                     manager="decipher"
-                    fixed
+                    fixed={true}
                 >
                     {entity}
                 </Text>
