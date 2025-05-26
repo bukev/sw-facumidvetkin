@@ -26,8 +26,11 @@ jobs:
           node-version: ${{ matrix.node-version }}
           cache: 'npm'
 
-      - name: Install dependencies
-        run: npm install
+      - name: Install frontend dependencies
+        run: cd apps/frontend && npm install
+
+      - name: Install backend dependencies
+        run: cd apps/backend && npm install
 
       - name: Run Prettier check
         run: npx prettier . --check
