@@ -1,4 +1,3 @@
-
 //Fonts
 @import url('https://fonts.googleapis.com/css2?family=Ubuntu+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap');
 @font-face {
@@ -13,146 +12,171 @@ $bg-color: hsl(216, 71%, 3%); //#02060C
 $primary-color: hsl(216, 26%, 81%); //#C2CCDB
 
 body {
-    background-color: $bg-color;
-    color: $primary-color;
-    font-family: 'Ubuntu Mono', monospace;
-    display: grid;
-    place-items: center;
-    
-    .content {
-        width: 100%;
-        max-width: 950px;
-    }
+  background-color: $bg-color;
+  color: $primary-color;
+  font-family: 'Ubuntu Mono', monospace;
+  display: grid;
+  place-items: center;
+
+  .content {
+    width: 100%;
+    max-width: 950px;
+  }
 }
 
 main {
-    padding: 0 24px 48px;
+  padding: 0 24px 48px;
 }
 
 h1 {
-    font-family: 'Baumans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    font-weight: 400;
-    font-style: normal;
-    text-transform: uppercase;
-    margin: 48px 0;
-    transition: all .2s ease;
-    text-shadow: 0 0 4px $primary-color;
-    text-align: center;
+  font-family:
+    'Baumans',
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    'Segoe UI',
+    Roboto,
+    Oxygen,
+    Ubuntu,
+    Cantarell,
+    'Open Sans',
+    'Helvetica Neue',
+    sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  text-transform: uppercase;
+  margin: 48px 0;
+  transition: all 0.2s ease;
+  text-shadow: 0 0 4px $primary-color;
+  text-align: center;
 }
 
 h2 {
-    font-family: 'Baumans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    text-transform: capitalize;
-    margin-top: 0;
-    margin-bottom: 16px;
-    text-align: center;
+  font-family:
+    'Baumans',
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    'Segoe UI',
+    Roboto,
+    Oxygen,
+    Ubuntu,
+    Cantarell,
+    'Open Sans',
+    'Helvetica Neue',
+    sans-serif;
+  text-transform: capitalize;
+  margin-top: 0;
+  margin-bottom: 16px;
+  text-align: center;
 }
 
 p {
-    margin: 0;
-    transition: all .25s ease-out;
+  margin: 0;
+  transition: all 0.25s ease-out;
 }
 
 hr {
-    margin: 0;
+  margin: 0;
 }
 
 input {
-    appearance: none;
-    outline: none;
-    font-family: inherit;
-    padding: 4px 0px;
-    background-color: $bg-color;
-    color: $primary-color;
-    border: none;
-    border-bottom: 1px solid $primary-color;
-    opacity: .5;
-    align-self: flex-end;
-    transition: all 0.2s ease-in;
-    width: 30%;
+  appearance: none;
+  outline: none;
+  font-family: inherit;
+  padding: 4px 0px;
+  background-color: $bg-color;
+  color: $primary-color;
+  border: none;
+  border-bottom: 1px solid $primary-color;
+  opacity: 0.5;
+  align-self: flex-end;
+  transition: all 0.2s ease-in;
+  width: 30%;
 
-    position: absolute;
-    right: 0;
-    bottom: 24px;
+  position: absolute;
+  right: 0;
+  bottom: 24px;
 
-    &:focus {
-        opacity: 1;
-        box-shadow: 0 4px 4px -4px $primary-color;
-    }
+  &:focus {
+    opacity: 1;
+    box-shadow: 0 4px 4px -4px $primary-color;
+  }
 }
 
 .home {
-    height: 75vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+  height: 75vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 
-    hr {
-        margin-bottom: 48px;
-    }
+  hr {
+    margin-bottom: 48px;
+  }
 }
 
 .page-title-wrapper {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 0 0 24px;
-    position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 0 24px;
+  position: relative;
 }
 
 .box-list-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 16px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 16px;
 }
 
 .card {
-    padding: 24px;
-    position: relative;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    flex-direction: row;
+  padding: 24px;
+  position: relative;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  flex-direction: row;
 
-    --arwes-frames-bg-color: hsla(216, 26%, 81%, 0.064);
-    --arwes-frames-line-color: hsl(216, 26%, 81%);
-    --arwes-frames-deco-color: hsla(216, 26%, 81%, 0.579);
-    --arwes-frames-bg-filter: drop-shadow(0 0 2px hsla(216, 26%, 81%, 0.579));
-    --arwes-frames-line-filter: drop-shadow(0 0 2px hsla(216, 26%, 81%, 0.579));
-    --arwes-frames-deco-filter: drop-shadow(0 0 2px hsla(216, 26%, 81%, 0.579));
+  --arwes-frames-bg-color: hsla(216, 26%, 81%, 0.064);
+  --arwes-frames-line-color: hsl(216, 26%, 81%);
+  --arwes-frames-deco-color: hsla(216, 26%, 81%, 0.579);
+  --arwes-frames-bg-filter: drop-shadow(0 0 2px hsla(216, 26%, 81%, 0.579));
+  --arwes-frames-line-filter: drop-shadow(0 0 2px hsla(216, 26%, 81%, 0.579));
+  --arwes-frames-deco-filter: drop-shadow(0 0 2px hsla(216, 26%, 81%, 0.579));
 
-    * {
-        transition: all .25s ease-out;
-    }
+  * {
+    transition: all 0.25s ease-out;
+  }
 
+  img {
+    margin-right: 16px;
+  }
+
+  &:hover {
+    --arwes-frames-line-filter: drop-shadow(0 0 2px hsl(216, 26%, 81%));
+    --arwes-frames-bg-filter: drop-shadow(0 0 2px hsl(216, 26%, 81%));
+
+    p,
     img {
-        margin-right: 16px;
+      transform: translate(-2px, -2px);
+      filter: drop-shadow(0 0 4px hsla(216, 26%, 81%, 0.392));
     }
 
-    &:hover {
-        --arwes-frames-line-filter: drop-shadow(0 0 2px hsl(216, 26%, 81%));
-        --arwes-frames-bg-filter: drop-shadow(0 0 2px hsl(216, 26%, 81%));
-
-        p, img {
-            transform: translate(-2px, -2px);
-            filter: drop-shadow(0 0 4px hsla(216, 26%, 81%, 0.392));
-        }
-
-        svg {
-            height: 100%;
-            width: 100%;
-            transform: translate(-2px, -2px);
-        }
+    svg {
+      height: 100%;
+      width: 100%;
+      transform: translate(-2px, -2px);
     }
+  }
 }
 
 .detail-section {
-    padding-top: 16px;
-    padding-bottom: 32px;
+  padding-top: 16px;
+  padding-bottom: 32px;
 }
 
 .details-list-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 12px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 12px;
 }
