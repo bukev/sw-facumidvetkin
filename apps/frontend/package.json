@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "cp ../../.env .env && next dev --turbopack",
-    "build": "cp ../../.env .env && next build --experimental-build-mode `compile`",
+    "build": "next build",
     "start": "next start",
     "lint": "next lint"
   },
