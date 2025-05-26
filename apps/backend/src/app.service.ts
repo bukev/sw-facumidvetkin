@@ -92,8 +92,11 @@ export class AppService {
     const url = `${this.baseURL}/${endpoint}/${id ?? ''}`
     
     try {
-      const res = await this.httpService.axiosRef.get(url)
-      return res.data
+      const { data } = await this.httpService.axiosRef.get(url)
+      delete data.created;
+      delete data.edited;
+
+      return data
     } catch (error) {
       throw new Error(`Failed to fetch ${endpoint}: ${error.message}`)
     }
@@ -126,13 +129,13 @@ export class AppService {
     delete character.vehicles
 
     const homeworld = await this.extractIdAndNameFromUrlList([character.homeworld])
-    const films = await this.extractIdAndNameFromUrlList(character.films)
+    const movies = await this.extractIdAndNameFromUrlList(character.films)
     const starships = await this.extractIdAndNameFromUrlList(character.starships)
 
     return {
       ...character,
       homeworld,
-      films,
+      movies,
       starships
     }
   }
@@ -196,16 +199,18 @@ export class AppService {
 
   async getStarshipById(id: string): Promise<Starship> {
     const starship = await this.fetchFromSwapiById('starships', id);
+    
+    const characters = await this.extractIdAndNameFromUrlList(starship.pilots)
+    const movies = await this.extractIdAndNameFromUrlList(starship.films)
+    
     delete starship.url
-
-    const pilots = await this.extractIdAndNameFromUrlList(starship.pilots)
-    const films = await this.extractIdAndNameFromUrlList(starship.films)
-
+    delete starship.pilots
+    delete starship.films
 
     return {
       ...starship,
-      pilots,
-      films
+      characters,
+      movies
     }
   }
 
@@ -229,16 +234,17 @@ export class AppService {
 
   async getPlanetById(id: string): Promise<Planet> {
     const planet = await this.fetchFromSwapiById('planets', id);
-    delete planet.url
-
+    
     const residents = await this.extractIdAndNameFromUrlList(planet.residents)
-    const films = await this.extractIdAndNameFromUrlList(planet.films)
-
+    const movies = await this.extractIdAndNameFromUrlList(planet.films)
+    
+    delete planet.url
+    delete planet.films
 
     return {
       ...planet,
       residents,
-      films
+      movies
     }
   }
 }

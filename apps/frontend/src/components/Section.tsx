@@ -1,5 +1,7 @@
-import useFetchData from "../hooks/useFetchData";
-import { ListResponse } from "@types";
+import useFetchList from "src/hooks/useFetchList";
+import { ListResponse } from "@bukev/types";
+import { Animator, Text } from "@arwes/react";
+import Loading from "./Loading";
 
 type Props = {
     entity: 'characters' | 'movies' | 'starships' | 'planets';
@@ -13,32 +15,43 @@ const Section: React.FC<Props> = ({ entity, ListItemComponent }) => {
         error,
         search,
         setSearch
-    } = useFetchData(entity);
+    } = useFetchList(entity);
 
     if (error) return <p className="text-red-600">Error: {error}</p>;
 
     return (
-        <>
+        <Animator duration={{ enter: 1.5 }}>
             <div className="page-title-wrapper">
-                <h1>{entity}</h1>
-                <input
-                    type="search"
-                    name="Search"
-                    placeholder={`Search ${entity}...`}
-                    value={search as any}
-                    onChange={(e) => setSearch(e.target.value)} />
-            </div>
+                <Text
+                    as="h1"
+                    manager="decipher"
+                    fixed
+                >
+                    {entity}
+                </Text>
 
-            <div className="box-list-grid">
-                {loading && (
-                    <p>Loading {entity}...</p>
+                {!loading && (
+                    <input
+                        type="search"
+                        name="Search"
+                        placeholder={`Search ${entity}...`}
+                        value={search as any}
+                        onChange={(e) => setSearch(e.target.value)}
+                    />
+
                 )}
-
-                {!loading && data?.map((item) => (
-                    <ListItemComponent item={item} key={item.id} />
-                ))}
             </div>
-        </>
+
+            {loading && <Loading />}
+
+            {!loading && (
+                <div className="box-list-grid">
+                    {data.map((item) => (
+                        <ListItemComponent item={item} key={item.id} />
+                    ))}
+                </div>
+            )}
+        </Animator>
     );
 }
 

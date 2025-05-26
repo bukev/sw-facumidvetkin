@@ -1,9 +1,9 @@
 'use client'
 
-import type { ListResponse } from "@types";
+import type { ListResponse } from "@bukev/types";
 import { useEffect, useLayoutEffect, useState } from "react";
 
-type useFetchDataResult = {
+type useFetchListResult = {
     data: ListResponse['data'];
     loading: boolean;
     error: string | null;
@@ -15,7 +15,7 @@ type useFetchDataResult = {
 
 type endpoint = 'characters' | 'movies' | 'planets' | 'starships';
 
-const useFetchData = (endpoint: endpoint): useFetchDataResult => {
+const useFetchList = (endpoint: endpoint): useFetchListResult => {
     const [search, setSearch] = useState<string>('');
     const [debouncedSearch, setDebouncedSearch] = useState<string>('');
     const [page, setPage] = useState<number>(1);
@@ -37,7 +37,7 @@ const useFetchData = (endpoint: endpoint): useFetchDataResult => {
         const fetchData = async () => {
             setLoading(true)
 
-            let url = new URL(`http://localhost:4000/${endpoint}`)
+            let url = new URL(`${process.env.NEXT_PUBLIC_API_BASE_URL}/${endpoint}`)
             debouncedSearch && url.searchParams.append('search', debouncedSearch)
             page && url.searchParams.append('page', String(page))
 
@@ -68,4 +68,4 @@ const useFetchData = (endpoint: endpoint): useFetchDataResult => {
     }
 }
 
-export default useFetchData;
+export default useFetchList;

@@ -1,0 +1,120 @@
+$body-color: #02070d;
+$glow-color: #c2ccdb;
+$bg-color: hsla(216, 26%, 81%, 0.064);
+
+.container {
+    margin-top: 32px;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    display: -webkit-flex;
+    flex-wrap: wrap;
+    -webkit-flex-wrap: wrap;
+    justify-content: space-around;
+    -webkit-justify-content: space-around;
+    align-items: center;
+    -webkit-align-items: center;
+    align-content: center;
+    -webkit-align-content: center;
+
+    &.full-screen {
+        position: absolute;
+        left: 0; right: 0; top: 0; bottom: 0;
+        margin: 0;
+    }
+}
+
+@mixin grid {
+    display: flex;
+    flex-wrap: wrap;
+    -webkit-flex-wrap: wrap;
+    justify-content: center;
+    -webkit-justify-content: center;
+    align-items: center;
+    -webkit-align-items: center;
+    align-content: center;
+    -webkit-align-content: center;
+}
+
+.grid-big {
+    @include grid;
+    width: 70px;
+    height: 70px;
+}
+
+@mixin cell {
+    width: 10px;
+    height: 10px;
+    border-radius: 0;
+    border: 1px solid $glow-color;
+    box-sizing: border-box;
+    margin: 2px;
+}
+
+/****** LOADING GRID #1 ******/
+
+$cell1-order: (
+    7,
+    8,
+    9,
+    12,
+    14,
+    17,
+    18,
+    19
+);
+
+//outer layer
+.cell-1 {
+    @include cell;
+    animation: quick-glow 1.25s 0.3s infinite linear;
+    -webkit-animation: quick-glow 1.25s 0.3s infinite linear;
+}
+
+//middle layer
+@for $i from 0 to length($cell1-order) {
+    .cell-1:nth-child(#{nth($cell1-order, $i+1)}) {
+        animation: quick-glow 1.25s 0.15s infinite linear;
+        -webkit-animation: quick-glow 1.25s 0.15s infinite linear;
+    }
+}
+
+//center cell
+.cell-1:nth-child(13) {
+    animation: quick-glow 1.25s infinite linear;
+    -webkit-animation: quick-glow 1.25s infinite linear;
+}
+
+/****** KEYFRAME ANIMATIONS ******/
+
+@keyframes quick-glow {
+    15% {
+        z-index: 99;
+        background: $glow-color;
+        box-shadow: 0 0 4px 1px $glow-color;
+    }
+}
+
+@keyframes glow {
+    50% {
+        z-index: 99;
+        background: $glow-color;
+        box-shadow: 0 0 4px 1px $glow-color;
+    }
+}
+
+@-webkit-keyframes quick-glow {
+    15% {
+        z-index: 99;
+        background: $glow-color;
+        box-shadow: 0 0 10px 2px $glow-color;
+    }
+}
+
+@-webkit-keyframes glow {
+    50% {
+        z-index: 99;
+        background: $glow-color;
+        box-shadow: 0 0 4px 2px $glow-color;
+    }
+}

@@ -1,4 +1,6 @@
-import type { ListResponse } from "@types";
+'use client';
+import type { ListResponse } from "@bukev/types";
+import Card from "src/components/Card";
 
 type Props = {
     item: ListResponse['data'][number];
@@ -6,13 +8,12 @@ type Props = {
 
 const CharacterListItem: React.FC<Props> = ({ item }) => {
     return (
-        <div
-            className="box-item"
-            key={item.id}
-        >
-            <p style={{fontWeight: 800}}>{item.name}</p>
-            <p>{item.homeworld}</p>
-        </div>
+        <Card
+            id={item.id}
+            title={item.name}
+            subtitle={item.homeworld}
+            type='characters'
+        />
     )
 }
 

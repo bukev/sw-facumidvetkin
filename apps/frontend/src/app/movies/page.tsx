@@ -2,7 +2,7 @@
 import Section from '../../components/Section';
 import MovieListItem from './MovieListItem';
 
-export default function CharactersPage() {
+export default function MoviesPage() {
   return (
     <main>
       <Section

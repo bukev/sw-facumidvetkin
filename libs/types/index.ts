@@ -31,8 +31,8 @@ export type Character = {
     eye_color: string; 
     birth_year: string; 
     gender: string; 
-    homeworld: RelatedEntity;
-    films: RelatedEntity[]; 
+    homeworld: RelatedEntity[];
+    movies: RelatedEntity[]; 
     starships: RelatedEntity[]; 
     created: string; 
     edited: string; 
@@ -61,7 +61,7 @@ export type Planet = {
     surface_water: string;
     population: string;
     residents: RelatedEntity[];
-    films: RelatedEntity[];
+    movies: RelatedEntity[];
 }
 
 export type Starship = {
@@ -79,5 +79,5 @@ export type Starship = {
     MGLT: string;
     starship_class: string;
     pilots: RelatedEntity[] | undefined;
-    films: RelatedEntity[];
+    movies: RelatedEntity[];
 }
