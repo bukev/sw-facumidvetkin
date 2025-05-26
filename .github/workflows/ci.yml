@@ -9,8 +9,12 @@ on:
       - main
 
 jobs:
-  lint-test-build:
+  test:
     runs-on: ubuntu-latest
+
+    env:
+      NEXT_PUBLIC_API_BASE_URL: http://localhost:4000
+      SWAPI_URL: 'https://swapi.py4e.com/api'
 
     strategy:
       matrix:
@@ -27,22 +31,28 @@ jobs:
           cache: 'npm'
 
       - name: Install frontend dependencies
-        run: cd apps/frontend && npm install
+        run: npm ci
+        working-directory: apps/frontend
 
       - name: Install backend dependencies
-        run: cd apps/backend && npm install
+        run: npm ci
+        working-directory: apps/backend
 
       - name: Run Prettier check
         run: npx prettier . --check
 
       - name: Run frontend tests
-        run: npm run test --workspace=apps/frontend
+        run: npm run test
+        working-directory: apps/frontend
 
       - name: Run backend tests
-        run: npm run test --workspace=apps/backend
+        run: npm run test
+        working-directory: apps/backend
 
       - name: Build frontend
-        run: npm run build --workspace=apps/frontend
+        run: npm run build
+        working-directory: apps/frontend
 
       - name: Build backend
-        run: npm run build --workspace=apps/backend
+        run: npm run build
+        working-directory: apps/backend
