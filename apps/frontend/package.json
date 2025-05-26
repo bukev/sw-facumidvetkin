@@ -3,9 +3,8 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev --turbopack",
-    "prebuild": "cd ../../libs/types && npm run build",
-    "build": "next build",
+    "dev": "cp ../../.env .env && next dev --turbopack",
+    "build": "cp ../../.env .env && next build",
     "start": "next start",
     "lint": "next lint"
   },

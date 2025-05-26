@@ -10,7 +10,7 @@ import type {
 
 @Injectable()
 export class AppService {
-  private readonly baseURL = 'https://swapi.py4e.com/api'
+  private readonly baseURL = process.env.SWAPI_URL
 
   constructor(private readonly httpService: HttpService) {}
 

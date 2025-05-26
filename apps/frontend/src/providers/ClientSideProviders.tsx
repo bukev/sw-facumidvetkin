@@ -36,7 +36,8 @@ export function ClientSideProviders({ children }: { children: React.ReactNode })
               backgroundColor: bgColor,
               opacity: .8,
               height: '100%',
-              filter: 'blur(20px)'
+              filter: 'blur(20px)',
+              zIndex: -1
             }}
           >
             <MovingLines lineColor={primaryColor} />
