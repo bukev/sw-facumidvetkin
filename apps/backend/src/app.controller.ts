@@ -6,10 +6,7 @@ export class AppController {
   constructor(private readonly appService: AppService) {}
 
   @Get('characters')
-  getCharacters(
-    @Query('search') search?: string,
-    @Query('page') page?: string,
-  ) {
+  getCharacters(@Query('search') search?: string, @Query('page') page?: string) {
     return this.appService.getCharacters(search, page);
   }
 
@@ -19,10 +16,7 @@ export class AppController {
   }
 
   @Get('movies')
-  getMovies(
-    @Query('search') search?: string,
-    @Query('page') page?: string,
-  ) {
+  getMovies(@Query('search') search?: string, @Query('page') page?: string) {
     return this.appService.getMovies(search, page);
   }
 
@@ -32,10 +26,7 @@ export class AppController {
   }
 
   @Get('starships')
-  getStarships(
-    @Query('search') search?: string,
-    @Query('page') page?: string,
-  ) {
+  getStarships(@Query('search') search?: string, @Query('page') page?: string) {
     return this.appService.getStarships(search, page);
   }
 
@@ -45,10 +36,7 @@ export class AppController {
   }
 
   @Get('planets')
-  getPlanets(
-    @Query('search') search?: string,
-    @Query('page') page?: string,
-  ) {
+  getPlanets(@Query('search') search?: string, @Query('page') page?: string) {
     return this.appService.getPlanets(search, page);
   }
 

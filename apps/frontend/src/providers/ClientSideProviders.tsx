@@ -1,5 +1,11 @@
 'use client';
-import { Animator, AnimatorGeneralProvider, BleepsProvider, BleepsProviderSettings, MovingLines } from '@arwes/react';
+import {
+  Animator,
+  AnimatorGeneralProvider,
+  BleepsProvider,
+  BleepsProviderSettings,
+  MovingLines,
+} from '@arwes/react';
 
 export function ClientSideProviders({ children }: { children: React.ReactNode }) {
   const bleepsSettings: BleepsProviderSettings = {
@@ -9,21 +15,21 @@ export function ClientSideProviders({ children }: { children: React.ReactNode })
         category: 'background',
         sources: [
           { src: '/hover.webm', type: 'audio/webm' },
-          { src: '/hover.mp3', type: 'audio/mpeg' }
-        ]
+          { src: '/hover.mp3', type: 'audio/mpeg' },
+        ],
       },
       click: {
         category: 'interaction',
         sources: [
           { src: '/click.webm', type: 'audio/webm' },
-          { src: '/click.mp3', type: 'audio/mpeg' }
-        ]
-      }
-    }
-  }
+          { src: '/click.mp3', type: 'audio/mpeg' },
+        ],
+      },
+    },
+  };
 
-  const bgColor = '#02060C'
-  const primaryColor = '#C2CCDB'
+  const bgColor = '#02060C';
+  const primaryColor = '#C2CCDB';
 
   return (
     <AnimatorGeneralProvider>
@@ -34,10 +40,10 @@ export function ClientSideProviders({ children }: { children: React.ReactNode })
               position: 'fixed',
               inset: 0,
               backgroundColor: bgColor,
-              opacity: .8,
+              opacity: 0.8,
               height: '100%',
               filter: 'blur(20px)',
-              zIndex: -1
+              zIndex: -1,
             }}
           >
             <MovingLines lineColor={primaryColor} />
