@@ -35,7 +35,7 @@ const Section: React.FC<Props> = ({ entity, ListItemComponent }) => {
                         type="search"
                         name="Search"
                         placeholder={`Search ${entity}...`}
-                        value={search as any}
+                        value={search}
                         onChange={(e) => setSearch(e.target.value)}
                     />
 

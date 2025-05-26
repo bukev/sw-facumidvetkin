@@ -19,7 +19,7 @@ const useFetchDetail = <T>(): useFetchDetailResult<T> => {
         const fetchData = async () => {
             setLoading(true)
 
-            let url = new URL(`${process.env.NEXT_PUBLIC_API_BASE_URL}${path}`)
+            const url = new URL(`${process.env.NEXT_PUBLIC_API_BASE_URL}${path}`)
 
             try {
                 const res = await fetch(url);
@@ -27,15 +27,19 @@ const useFetchDetail = <T>(): useFetchDetailResult<T> => {
                 const data = await res.json();
                 console.log(data)
                 setData(data);
-            } catch (err: any) {
-                setError(err.message || 'Unknown error');
+            } catch (err) {
+                if (err instanceof Error) {
+                    setError(err.message || 'Unknown error');
+                } else {
+                    setError('Unknown error');
+                }
             } finally {
                 setLoading(false);
             }
         };
 
         fetchData();
-    }, [])
+    }, [path])
 
     return {
         data,

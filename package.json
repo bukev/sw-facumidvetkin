@@ -7,15 +7,25 @@
   "scripts": {
     "dev:frontend": "npm --workspace apps/frontend run dev",
     "dev:backend": "npm --workspace apps/backend run start:dev",
-    "dev": "concurrently \"npm run dev:frontend\" \"npm run dev:backend\""
+    "dev": "concurrently \"npm run dev:frontend\" \"npm run dev:backend\"",
+    "clean": "rm -rf node_modules package-lock.json apps/frontend/.env apps/frontend/.next apps/frontend/node_modules apps/backend/.env apps/backend/node_modules apps/backend/dist"
   },
   "devDependencies": {
+    "@types/node": "^22.15.21",
     "concurrently": "^9.1.2"
   },
   "dependencies": {
-    "@bukev/types": "file:libs/types",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "next": "15.3.2",
     "@arwes/react": "^1.0.0-alpha.23",
+    "@nestjs/common": "^11.0.1",
+    "@nestjs/core": "^11.0.1",
+    "@nestjs/platform-express": "^11.0.1",
+    "reflect-metadata": "^0.2.2",
+    "rxjs": "^7.8.1",
     "@nestjs/axios": "^4.0.0",
+    "@bukev/types": "file:libs/types",
     "axios": "^1.9.0",
     "sass": "^1.89.0"
   }

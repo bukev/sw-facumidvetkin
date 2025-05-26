@@ -1,6 +1,5 @@
 'use client'
 import { Text } from "@arwes/react";
-import Image from "next/image";
 import Card from "src/components/Card";
 
 export default function Home() {

@@ -1,5 +1,5 @@
 'use client';
-import { Animator, AnimatorGeneralProvider, BleepsProvider, BleepsProviderSettings, Dots, GridLines, MovingLines } from '@arwes/react';
+import { Animator, AnimatorGeneralProvider, BleepsProvider, BleepsProviderSettings, MovingLines } from '@arwes/react';
 
 export function ClientSideProviders({ children }: { children: React.ReactNode }) {
   const bleepsSettings: BleepsProviderSettings = {

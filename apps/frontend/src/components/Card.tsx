@@ -19,8 +19,8 @@ type Props = {
 
 const Card: React.FC<Props> = ({ id, title, subtitle, type, overrideNavigation }) => {
     const router = useRouter();
-    const elementRef = useRef<SVGSVGElement>(null)
-    useFrameAssembler(elementRef)
+    const elementRef = useRef<SVGSVGElement>(null);
+    useFrameAssembler(elementRef as React.RefObject<SVGElement>);
     const bleeps = useBleeps()
 
     const svgSelector = {
