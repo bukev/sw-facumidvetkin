@@ -17,12 +17,13 @@ This project was developed as a coding challenge for **Conexa**, showcasing full
 - **Shared Types**: TypeScript types shared across frontend and backend via a local workspace package.
 - **CI/CD**: GitHub Actions for build, test, and Prettier check on all branches.
 - **Deployment**:
-    - Frontend: [Vercel](https://sw-facumidvetkin-frontend.vercel.app/)
-    - Backend: [Railway](https://sw-facumidvetkin-production.up.railway.app/)
+  - Frontend: [Vercel](https://sw-facumidvetkin-frontend.vercel.app/)
+  - Backend: [Railway](https://sw-facumidvetkin-production.up.railway.app/)
 
 ## 🚀 Getting Started
 
 ### 📦 Set Up
+
 ```bash
 cp .example.env .env
 npm install
@@ -31,11 +32,13 @@ npm install
 ### 🛠️ Start the App (Development)
 
 #### Start both apps together:
+
 ```bash
 npm run dev
 ```
 
 #### Or individually:
+
 ```bash
 # Frontend
 npm run dev:frontend
@@ -45,6 +48,7 @@ npm run dev:backend
 ```
 
 ### 🧪 Run Tests (Unit)
+
 ```bash
 # Frontend
 npm run test:frontend
@@ -55,7 +59,7 @@ npm run test:backend
 
 ## 📦 Deployment
 
-| Layer     | Platform | URL                                                                 |
-|-----------|----------|----------------------------------------------------------------------|
-| Frontend  | Vercel   | [sw-facumidvetkin-frontend.vercel.app](https://sw-facumidvetkin-frontend.vercel.app/) |
-| Backend   | Railway  | [sw-facumidvetkin-production.up.railway.app](https://sw-facumidvetkin-production.up.railway.app/) |
+| Layer    | Platform | URL                                                                                               |
+| -------- | -------- | ------------------------------------------------------------------------------------------------- |
+| Frontend | Vercel   | [sw-facumidvetkin-frontend.vercel.app](https://sw-facumidvetkin-frontend.vercel.app/)             |
+| Backend  | Railway  | [sw-facumidvetkin-production.up.railway.app](https://sw-facumidvetkin-production.up.railway.app/) |
