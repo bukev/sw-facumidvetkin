@@ -35,5 +35,4 @@ describe('Characters Controller', () => {
     expect(charactersService.getCharacterById).toHaveBeenCalledWith('1');
     expect(result).toBe('character 1');
   });
-
-})
+});

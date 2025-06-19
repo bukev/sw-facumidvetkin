@@ -6,12 +6,6 @@ import { PlanetsModule } from './planets/planets.module';
 import { StarshipsModule } from './starships/starships.module';
 
 @Module({
-  imports: [
-    CharactersModule,
-    MoviesModule,
-    PlanetsModule,
-    StarshipsModule,
-    HttpModule
-  ],
+  imports: [CharactersModule, MoviesModule, PlanetsModule, StarshipsModule, HttpModule],
 })
 export class AppModule {}

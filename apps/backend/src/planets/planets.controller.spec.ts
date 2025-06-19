@@ -35,5 +35,4 @@ describe('Planets Controller', () => {
     expect(planetsService.getPlanetById).toHaveBeenCalledWith('1');
     expect(result).toBe('planet 1');
   });
-
-})
+});

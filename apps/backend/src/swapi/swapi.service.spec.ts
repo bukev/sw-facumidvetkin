@@ -124,4 +124,4 @@ describe('SWAPI Service', () => {
       );
     });
   });
-})
+});

@@ -1,5 +1,5 @@
 import { Test, TestingModule } from '@nestjs/testing';
-import { StarshipsService } from "./starships.service";
+import { StarshipsService } from './starships.service';
 import { SwapiService } from 'src/swapi/swapi.service';
 
 describe('Starships Service', () => {
@@ -97,4 +97,4 @@ describe('Starships Service', () => {
       movies: mockMovies,
     });
   });
-})
+});

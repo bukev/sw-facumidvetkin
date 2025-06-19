@@ -4,7 +4,6 @@ import { SwapiService } from 'src/swapi/swapi.service';
 
 @Injectable()
 export class CharactersService {
-
   constructor(private readonly swapiService: SwapiService) {}
 
   async getCharacters(search?: string, page?: string): Promise<ListResponse> {

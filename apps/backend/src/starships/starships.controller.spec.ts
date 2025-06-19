@@ -35,4 +35,4 @@ describe('Starships Controller', () => {
     expect(starshipsService.getStarshipById).toHaveBeenCalledWith('1');
     expect(result).toBe('starship 1');
   });
-})
+});

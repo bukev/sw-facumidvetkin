@@ -1,5 +1,5 @@
 import { Test, TestingModule } from '@nestjs/testing';
-import { MoviesService } from "./movies.service";
+import { MoviesService } from './movies.service';
 import { SwapiService } from 'src/swapi/swapi.service';
 
 describe('Movies Service', () => {

@@ -1,5 +1,5 @@
 import { Controller, Get, Param, Query } from '@nestjs/common';
-import { CharactersService } from './characters.service'; 
+import { CharactersService } from './characters.service';
 
 @Controller()
 export class CharactersController {
@@ -14,5 +14,4 @@ export class CharactersController {
   getCharacterById(@Param('id') id: string) {
     return this.charactersService.getCharacterById(id);
   }
-
 }

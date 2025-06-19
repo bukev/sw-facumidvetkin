@@ -4,7 +4,6 @@ import { SwapiService } from 'src/swapi/swapi.service';
 
 @Injectable()
 export class MoviesService {
-
   constructor(private readonly swapiService: SwapiService) {}
 
   async getMovies(search?: string, page?: string): Promise<ListResponse> {

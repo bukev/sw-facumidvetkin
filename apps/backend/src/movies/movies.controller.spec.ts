@@ -35,5 +35,4 @@ describe('Movies Controller', () => {
     expect(moviesService.getMovieById).toHaveBeenCalledWith('3');
     expect(result).toBe('movie 1');
   });
-
-})
+});

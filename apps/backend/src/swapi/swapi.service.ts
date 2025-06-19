@@ -1,5 +1,5 @@
-import { HttpService } from "@nestjs/axios";
-import { Injectable } from "@nestjs/common";
+import { HttpService } from '@nestjs/axios';
+import { Injectable } from '@nestjs/common';
 
 @Injectable()
 export class SwapiService {
@@ -70,7 +70,7 @@ export class SwapiService {
       throw new Error(`Failed to fetch ${endpoint}: ${error.message}`);
     }
   }
-  
+
   async fetchFromSwapiById(endpoint: string, id: string) {
     const url = `${this.baseURL}/${endpoint}/${id ?? ''}`;
 
@@ -86,11 +86,11 @@ export class SwapiService {
   }
 
   async fetchFullURL(url: string) {
-      try {
-        const res = await this.httpService.axiosRef.get(url);
-        return await res.data;
-      } catch (error) {
-        throw new Error(`Failed to fetch ${url}: ${error.message}`);
-      }
+    try {
+      const res = await this.httpService.axiosRef.get(url);
+      return await res.data;
+    } catch (error) {
+      throw new Error(`Failed to fetch ${url}: ${error.message}`);
     }
+  }
 }

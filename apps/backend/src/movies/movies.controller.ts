@@ -14,5 +14,4 @@ export class MoviesController {
   getMovieById(@Param('id') id: string) {
     return this.moviesService.getMovieById(id);
   }
-
 }
