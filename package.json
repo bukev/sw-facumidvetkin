@@ -10,7 +10,9 @@
     "dev": "concurrently \"npm run dev:frontend\" \"npm run dev:backend\"",
     "clean": "rm -rf node_modules package-lock.json apps/frontend/.env apps/frontend/.next apps/frontend/node_modules apps/backend/.env apps/backend/node_modules apps/backend/dist",
     "prettier:check": "npx prettier --check .",
-    "prettier:write": "npx prettier --write ."
+    "prettier:write": "npx prettier --write .",
+    "test:frontend": "npm --workspace apps/frontend run test",
+    "test:backend": "npm --workspace apps/backend run test"
   },
   "devDependencies": {
     "@types/node": "^22.15.21",
